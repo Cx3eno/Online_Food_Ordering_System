@@ -1,11 +1,10 @@
-navbar = document.querySelector('.header .flex .navbar');
+let navbar = document.querySelector('.header .flex .navbar');
+let profile = document.querySelector('.header .flex .profile');
 
 document.querySelector('#menu-btn').onclick = () =>{
    navbar.classList.toggle('active');
    profile.classList.remove('active');
 }
-
-profile = document.querySelector('.header .flex .profile');
 
 document.querySelector('#user-btn').onclick = () =>{
    profile.classList.toggle('active');
@@ -13,8 +12,8 @@ document.querySelector('#user-btn').onclick = () =>{
 }
 
 window.onscroll = () =>{
-   navbar.classList.remove('active');
    profile.classList.remove('active');
+   navbar.classList.remove('active');
 }
 
 function loader(){
@@ -26,9 +25,3 @@ function fadeOut(){
 }
 
 window.onload = fadeOut;
-
-document.querySelectorAll('input[type="number"]').forEach(numberInput => {
-   numberInput.oninput = () =>{
-      if(numberInput.value.length > numberInput.maxLength) numberInput.value = numberInput.value.slice(0, numberInput.maxLength);
-   };
-});
